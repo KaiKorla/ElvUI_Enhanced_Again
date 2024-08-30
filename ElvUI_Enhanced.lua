@@ -20,11 +20,11 @@ if testmode then
 end
 -- <Clear DB for testing
 
-EEL.version = GetAddOnMetadata("ElvUI_Enhanced", "Version")
+EEL.version = C_AddOns.GetAddOnMetadata("ElvUI_Enhanced", "Version")
 EEL.title = format('|cff00c0fa%s|r|cffff8000%s|r|cff00c0fa%s|r', "ElvUI ", "Enhanced ", "Again")
 EEL.config = {}
 EEL.elvV = tonumber(E.version)
-EEL.elvR = tonumber(GetAddOnMetadata("ElvUI_Enhanced", "X-ElvVersion"))
+EEL.elvR = tonumber(C_AddOns.GetAddOnMetadata("ElvUI_Enhanced", "X-ElvVersion"))
 
 P["eel"] = {}
 V["eel"] = {}
@@ -33,7 +33,7 @@ E.PopupDialogs["VERSION_MISMATCH_EEL"] = {
 	text = format(L["MSG_EEL_ELV_OUTDATED"], EEL.elvV, EEL.elvR),
 	button1 = CLOSE,
 	timeout = 0,
-	whileDead = 1,	
+	whileDead = 1,
 	preferredIndex = 3,
 }
 
