@@ -52,7 +52,7 @@ Please Note: This add-on will not function without ElvUI installed. You can down
 - Show the range of a target in a datatext
 
 # Removed Features
-You can make a request for only of the old features on: [https://github.com/nickbock/ElvUI_Enhanced_Again](https://github.com/nickbock/ElvUI_Enhanced_Again ""). 
+You can make a request for only of the old features on: [https://github.com/KaiKorla/ElvUI_Enhanced_Again](https://github.com/KaiKorla/ElvUI_Enhanced_Again ""). 
 If enough people want it, I will consider adding the feature.
 
 ### Mini map
