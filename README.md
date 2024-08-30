@@ -1,4 +1,4 @@
-[![Package and release](https://github.com/KaiKorla/ElvUI_Enhanced_Again/actions/workflows/main.yml/badge.svg)](https://github.com/KaiKorla/ElvUI_Enhanced_Again/actions/workflows/main.yml)
+[![Package and release](https://github.com/KaiKorla/ElvUI_Enhanced_Again/actions/workflows/release.yml/badge.svg)](https://github.com/KaiKorla/ElvUI_Enhanced_Again/actions/workflows/release.yml)
 
 # Important Notice
 ### **The latest version is a rework of the add-on, not all features will be ported. If you move from v3 to v4, old settings will be lost!**
