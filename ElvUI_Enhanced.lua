@@ -5,8 +5,6 @@ local EP = LibStub("LibElvUIPlugin-1.0")
 local AddOnName, Engine = ...
 local EEL = E:NewModule("ElvuiEnhancedAgain", "AceHook-3.0", "AceEvent-3.0", "AceTimer-3.0");
 
-local IsAddOnLoaded = IsAddOnLoaded
-
 -- Clear DB for testing>
 local testmode = false
 if testmode then

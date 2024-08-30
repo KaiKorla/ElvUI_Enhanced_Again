@@ -226,8 +226,8 @@ function PD:InitialUpdatePaperDoll()
   self:BuildInfoText("Character")
   PD:ScheduleTimer("UpdatePaperDoll", 2, false)
   initialized = true
-  if IsAddOnLoaded("Blizzard_InspectUI") then 
-	self:OnAddonLoaded(_, "Blizzard_InspectUI") 
+  if C_AddOns.IsAddOnLoaded("Blizzard_InspectUI") then 
+	  self:OnAddonLoaded(_, "Blizzard_InspectUI") 
   end
   PD:UnregisterEvent("PLAYER_ENTERING_WORLD")
 end
