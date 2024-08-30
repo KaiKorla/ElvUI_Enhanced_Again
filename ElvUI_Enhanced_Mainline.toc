@@ -1,7 +1,7 @@
 ## Title: |cff1784d1ElvUI|r Enhanced Again
 ## Notes: Plugin-Enhancements for |cff1784d1ElvUI|r.
 ## Author: Tevvoll, Illuminé
-## Version: 5.0.0
+## Version: 5.0.1
 ## RequiredDeps: ElvUI
 ## Interface: 110002
 ## X-Interface: 110002
@@ -14,6 +14,3 @@ locales\load_locales.xml
 ElvUI_Enhanced.lua
 config\load_config.xml
 modules\load_modules.xml
-
-
-
