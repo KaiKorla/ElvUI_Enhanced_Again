@@ -5,9 +5,9 @@ if not L then return end
 -- Translation by: Kaltzifar
 
 -- Init
-L["ENH_LOGIN_MSG"] = "Sie verwenden |cff1784d1ElvUI Enhanced Again|r |cffff8000(Shadowlands)|r Version %s%s|r."
+L["ENH_LOGIN_MSG"] = "Sie verwenden |cff1784d1ElvUI Enhanced Again|r |cffff8000(The War Within)|r Version %s%s|r."
 L["ENH_LOGIN_MSG_WRATH"] = "You are using |cff1784d1ElvUI Enhanced Again|r |cffff8000(Wrath Classic)|r version %s%s|r."
-L["MSG_EEL_ELV_OUTDATED"] = "Ihre Version von ElvUI ist älter als für die Verwendung mit |cff1784d1ElvUI Enhanced Lite|r |cffff8000(Shadowlands)|r empfohlen. Ihre Version ist |cff1784d1%.2f|r (empfohlen ist |cff1784d1%.2f|r. Bitte aktualisieren Sie Ihre ElvUI."
+L["MSG_EEL_ELV_OUTDATED"] = "Die installierte version of ElvUI ist zu alt (benötigt wird v13.76 or higher). Bitte lade die aktuelel Version von tukui.org."
 
 -- Equipment
 L["Equipment"] = "Ausrüstung"
