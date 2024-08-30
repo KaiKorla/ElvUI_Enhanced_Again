@@ -58,9 +58,6 @@ function EEL:Initialize()
 		if E.Retail then
 			print(format(L['ENH_LOGIN_MSG'], E["media"].hexvaluecolor, EEL.version))
 		end
-		if E.Wrath then
-			print(format(L['ENH_LOGIN_MSG_WRATH'], E["media"].hexvaluecolor, EEL.version))
-		end
 	end	
 	self.initialized = true
 

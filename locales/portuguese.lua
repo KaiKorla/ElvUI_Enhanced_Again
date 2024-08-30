@@ -4,7 +4,6 @@ if not L then return end
 -- Translation by: ubios
 
 L["ENH_LOGIN_MSG"] = "Você está a usar |cff1784d1ElvUI Enhanced Again|r |cffff8000(The War Within)|r Version %s%s|r."
-L["ENH_LOGIN_MSG_WRATH"] = "You are using |cff1784d1ElvUI Enhanced Again|r |cffff8000(Wrath Classic)|r version %s%s|r."
 L["Your version of ElvUI is to old (required v13.76 or higher). Please, download the latest version from tukui.org."] = "A sua versão do ElvUI é muita antiga (requerida v6.51 ou superior). Por favor, descarregue a versão mais recente em tukui.org."
 
 -- Equipment

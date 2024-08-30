@@ -4,7 +4,6 @@ if not L then return end
 
 -- Init
 L["ENH_LOGIN_MSG"] = "You are using |cff1784d1ElvUI Enhanced Again|r |cffff8000(The War Within)|r Version %s%s|r."
-L["ENH_LOGIN_MSG_WRATH"] = "You are using |cff1784d1ElvUI Enhanced Again|r |cffff8000(Wrath Classic)|r version %s%s|r."
 L["MSG_EEL_ELV_OUTDATED"] = "Your version of ElvUI is to old (required v13.76 or higher). Please, download the latest version from tukui.org."
 
 -- Equipment

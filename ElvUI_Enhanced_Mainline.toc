@@ -3,8 +3,9 @@
 ## Author: Tevvoll, Illuminé
 ## Version: 5.0.0
 ## RequiredDeps: ElvUI
-## Interface: 30403
-## X-Interface: 30403
+## Interface: 110002
+## X-Interface: 110002
+## AddonCompartmentFunc: ElvUI_AddonCompartmentFunc
 ## IconTexture: Interface\AddOns\ElvUI\Core\Media\Textures\LogoAddon
 ## X-ElvVersion: 13.76
 
@@ -12,4 +13,7 @@ libs\load_libs.xml
 locales\load_locales.xml
 ElvUI_Enhanced.lua
 config\load_config.xml
-modules\load_modules_wrath.xml
+modules\load_modules.xml
+
+
+
