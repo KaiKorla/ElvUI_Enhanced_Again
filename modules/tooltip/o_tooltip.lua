@@ -17,7 +17,7 @@ P["eel"]["progression"] = {
         ["vault"] = false,
         ["abberrus"] = false,
         ["amirdrassil"] = false,
-        ["nerubarpalace"] = false,
+        ["nerubarpalace"] = true,
     },
 }
 

@@ -29,6 +29,9 @@ PT.tiers["LONG"] = {
 		"Vault of the Incarnates",
 		"Abberrus, the Shadowed Crucible",
 		"Amirdrassil, the Dream's Hope",
+		"Abberrus, the Shadowed Crucible",
+		"Amirdrassil, the Dream's Hope",
+		"Nerub'ar Palace",
 }
 PT.tiers["SHORT"] = {
 		"ULD",
@@ -42,6 +45,7 @@ PT.tiers["SHORT"] = {
 		"VotI",
 		"ASC",
 		"ADH",
+		"NP",
 }
 
 PT.bosses = {
@@ -246,6 +250,23 @@ PT.bosses = {
 			{ -- LFR
 				19348, 19352, 19353, 19354, 19355, 19356, 19357, 19358, 19359
 			},
+		},
+	},
+	{ -- Nerub'ar Palace
+		["option"] = "nerubarpalace",
+		["statIDs"] = {
+			{ -- Mythic
+				40236, 40237, 40238, 40239, 40240, 40241, 40242, 40243
+			},
+			-- { -- Heroic
+			-- 	19369, 19370, 19371, 19372, 19373, 19374, 19375, 19376, 1937
+			-- },
+			-- { -- Normal
+			-- 	19360, 19361, 19362, 19363, 19364, 19365, 19366, 19367, 19368
+			-- },
+			-- { -- LFR
+			-- 	19348, 19352, 19353, 19354, 19355, 19356, 19357, 19358, 19359
+			-- },
 		},
 	},
 }
