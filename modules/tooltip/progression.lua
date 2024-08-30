@@ -29,8 +29,6 @@ PT.tiers["LONG"] = {
 		"Vault of the Incarnates",
 		"Abberrus, the Shadowed Crucible",
 		"Amirdrassil, the Dream's Hope",
-		"Abberrus, the Shadowed Crucible",
-		"Amirdrassil, the Dream's Hope",
 		"Nerub'ar Palace",
 }
 PT.tiers["SHORT"] = {
