@@ -16,7 +16,8 @@ P["eel"]["progression"] = {
         ["sepul"] = false,
         ["vault"] = false,
         ["abberrus"] = false,
-        ["amirdrassil"] = true,
+        ["amirdrassil"] = false,
+        ["nerubarpalace"] = false,
     },
 }
 
@@ -108,6 +109,18 @@ local function ConfigTable()
                             abberrus = { order = -36, type = "toggle", name = "Abberrus, the Shadowed Crucible" },
                             amirdrassil = { order = -35, type = "toggle", name = "Amirdrassil, the Dream's Hope" },
                         }
+                    },
+                    tww = {
+                        order = 9,
+                        type = "group",
+                        name = "The War Within",
+                        guiInline = true,
+                        get = function(info) return E.db.eel.progression.raids[ info[#info] ] end,
+                        set = function(info, value) E.db.eel.progression.raids[ info[#info] ] = value end,
+                        disabled = function() return not E.db.eel.progression.enable end,
+                        args = {
+                            nerubarpalace = { order = -34, type = "toggle", name = "Nerub'ar Palace" },
+                        } 
                     }
                 },
             }
