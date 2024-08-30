@@ -1,15 +1,13 @@
-## Interface: 100206
 ## Title: |cff1784d1ElvUI|r Enhanced Again
-## Author: Tevoll
-## Version: 4.2.8
 ## Notes: Plugin-Enhancements for |cff1784d1ElvUI|r.
-## X-Category: Plugins
-## URL: https://www.curseforge.com/wow/addons/elvui-enhanced-again
-## X-Website: https://www.curseforge.com/wow/addons/elvui-enhanced-again
+## Author: Tevvoll, Illuminé
+## Version: 5.0.0
 ## RequiredDeps: ElvUI
-## DefaultState: Enabled
-## X-ElvVersion: 13.54
-## X-Wago-ID: WqKQpk6x
+## Interface: 110002
+## X-Interface: 110002
+## AddonCompartmentFunc: ElvUI_AddonCompartmentFunc
+## IconTexture: Interface\AddOns\ElvUI\Core\Media\Textures\LogoAddon
+## X-ElvVersion: 13.76
 
 libs\load_libs.xml
 locales\load_locales.xml
