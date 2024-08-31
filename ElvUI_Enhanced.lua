@@ -42,7 +42,8 @@ local function GetOptions()
 end
 
 --Showing warning message about too old versions of ElvUI
-if EEL.elvV < 12 or (EEL.elvV < EEL.elvR) then
+if EEL.elvV < EEL.elvR then
+	print(E.version)
 	E:Delay(2, function() E:StaticPopup_Show("VERSION_MISMATCH_EEL") end)
 	return
 end
