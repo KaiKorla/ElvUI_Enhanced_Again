@@ -217,7 +217,7 @@ function MB:UpdateLayout()
 	local AnchorX, AnchorY, MaxX = 0, 1, E.minimapbuttons.db.buttonsPerRow
 	local ButtonsPerRow = E.minimapbuttons.db.buttonsPerRow
 	local NumColumns = ceil(#moveButtons / ButtonsPerRow)
-	local Spacing, Mult = 2, 1
+	local Padding, Mult = E.minimapbuttons.db.buttonPadding, 1
 	local Size = E.minimapbuttons.db.buttonSize
 	local ActualButtons, Maxed = 0
 	local direction = E.minimapbuttons.db.layoutDirection == 'NORMAL'
@@ -281,13 +281,13 @@ function MB:UpdateLayout()
 			if E.minimapbuttons.db.skinStyle == 'HORIZONTAL' then
 				anchor1 = direction and 'TOPLEFT' or 'TOPRIGHT'
 				anchor2 = direction and 'TOPRIGHT' or 'TOPLEFT'
-				offsetX = direction and (Spacing + ((Size + Spacing) * (AnchorX - 1))) or (- (Spacing + ((Size + Spacing) * (AnchorX - 1))))
-				offsetY = (- Spacing - ((Size + Spacing) * (AnchorY - 1)))
+				offsetX = direction and (Padding + ((Size + Padding) * (AnchorX - 1))) or (- (Padding + ((Size + Padding) * (AnchorX - 1))))
+				offsetY = (- Padding - ((Size + Padding) * (AnchorY - 1)))
 			else
 				anchor1 = direction and 'BOTTOMRIGHT' or 'TOPRIGHT'
 				anchor2 = direction and 'TOPRIGHT' or 'BOTTOMRIGHT'
-				offsetX = (- ((Size + Spacing) * (AnchorY - 1)))
-				offsetY = direction and (Spacing + ((Size + Spacing) * (AnchorX - 1))) or (- (Spacing + ((Size + Spacing) * (AnchorX - 1))))
+				offsetX = (- ((Size + Padding) * (AnchorY - 1)))
+				offsetY = direction and (Padding + ((Size + Padding) * (AnchorX - 1))) or (- (Padding + ((Size + Padding) * (AnchorX - 1))))
 			end
 			frame:SetPoint(anchor1, minimapButtonBar, anchor1, offsetX, offsetY)
 			if Maxed then ActualButtons = ButtonsPerRow end
@@ -298,12 +298,12 @@ function MB:UpdateLayout()
 	
 	if E.minimapbuttons.db.skinStyle ~= 'NOANCHOR' and #moveButtons > 0 then
 		if E.minimapbuttons.db.skinStyle == "HORIZONTAL" then
-			local BarWidth = (Spacing + ((Size * (ActualButtons * Mult)) + ((Spacing * (ActualButtons - 1)) * Mult) + (Spacing * Mult)))
-			local BarHeight = (Spacing + ((Size * (AnchorY * Mult)) + ((Spacing * (AnchorY - 1)) * Mult) + (Spacing * Mult)))
+			local BarWidth = (Padding + ((Size * (ActualButtons * Mult)) + ((Padding * (ActualButtons - 1)) * Mult) + (Padding * Mult)))
+			local BarHeight = (Padding + ((Size * (AnchorY * Mult)) + ((Padding * (AnchorY - 1)) * Mult) + (Padding * Mult)))
 			minimapButtonBar:SetSize(BarWidth, BarHeight)
 		else
-			local BarWidth = (Spacing + ((Size * (AnchorY * Mult)) + ((Spacing * (AnchorY - 1)) * Mult) + (Spacing * Mult)))
-			local BarHeight = (Spacing + ((Size * (ActualButtons * Mult)) + ((Spacing * (ActualButtons - 1)) * Mult) + (Spacing * Mult)))
+			local BarWidth = (Padding + ((Size * (AnchorY * Mult)) + ((Padding * (AnchorY - 1)) * Mult) + (Padding * Mult)))
+			local BarHeight = (Padding + ((Size * (ActualButtons * Mult)) + ((Padding * (ActualButtons - 1)) * Mult) + (Padding * Mult)))
 			minimapButtonBar:SetSize(BarWidth, BarHeight)
 		end
 		minimapButtonBarAnchor:SetSize(minimapButtonBar:GetSize())

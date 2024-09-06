@@ -17,6 +17,7 @@ P["eel"]["minimap"] = {
         ['mbcalendar'] =  false,
         ['mbgarrison'] = false,
         ['buttonsPerRow'] = 5,
+        ['buttonPadding'] = 2,
     }
 }
 
@@ -126,8 +127,16 @@ local function ConfigTable()
                             ['REVERSED'] = L['Reversed'],
                         },
                     },
-                    buttonSize = {
+                    buttonPadding = {
                         order = 4,
+                        type = 'range',
+                        name = L['Button Padding'],
+                        desc = L['The padding of the minimap buttons.'],
+                        min = 1, max = 100, step = 1,
+                        disabled = function() return not E.db.eel.minimap.minimapbar.enable or E.db.eel.minimap.minimapbar.skinstyle == 'NOANCHOR' end,
+                    },
+                    buttonSize = {
+                        order = 5,
                         type = 'range',
                         name = L['Button Size'],
                         desc = L['The size of the minimap buttons.'],
@@ -135,7 +144,7 @@ local function ConfigTable()
                         disabled = function() return not E.db.eel.minimap.minimapbar.enable or E.db.eel.minimap.minimapbar.skinstyle == 'NOANCHOR' end,
                     },
                     buttonsPerRow = {
-                        order = 5,
+                        order = 6,
                         type = 'range',
                         name = L['Buttons per row'],
                         desc = L['The max number of buttons when a new row starts.'],
@@ -144,12 +153,12 @@ local function ConfigTable()
                     },
                     backdrop = {
                         type = 'toggle',
-                        order = 6,
+                        order = 7,
                         name = L["Backdrop"],
                         disabled = function() return not E.db.eel.minimap.minimapbar.enable or E.db.eel.minimap.minimapbar.skinstyle == 'NOANCHOR' end,
                     },			
                     mouseover = {
-                        order = 7,
+                        order = 8,
                         name = L['Mouse Over'],
                         desc = L['The frame is not shown unless you mouse over the frame.'],
                         type = "toggle",
@@ -157,7 +166,7 @@ local function ConfigTable()
                         disabled = function() return not E.db.eel.minimap.minimapbar.enable or E.db.eel.minimap.minimapbar.skinstyle == 'NOANCHOR' end,
                     },
                     mmbuttons = {
-                        order = 8,
+                        order = 9,
                         type = "group",
                         name = L["Minimap Buttons"],
                         guiInline = true,
