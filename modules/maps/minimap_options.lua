@@ -132,7 +132,7 @@ local function ConfigTable()
                         type = 'range',
                         name = L['Button Padding'],
                         desc = L['The padding of the minimap buttons.'],
-                        min = 1, max = 100, step = 1,
+                        min = 0, max = 100, step = 1,
                         disabled = function() return not E.db.eel.minimap.minimapbar.enable or E.db.eel.minimap.minimapbar.skinstyle == 'NOANCHOR' end,
                     },
                     buttonSize = {
@@ -140,7 +140,7 @@ local function ConfigTable()
                         type = 'range',
                         name = L['Button Size'],
                         desc = L['The size of the minimap buttons.'],
-                        min = 16, max = 40, step = 1,
+                        min = 16, max = 100, step = 1,
                         disabled = function() return not E.db.eel.minimap.minimapbar.enable or E.db.eel.minimap.minimapbar.skinstyle == 'NOANCHOR' end,
                     },
                     buttonsPerRow = {
