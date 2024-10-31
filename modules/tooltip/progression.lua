@@ -1,5 +1,5 @@
 ------------------------------------------------------------------
--- This feature was originally created by Darth and Repooc of S&L.
+-- This feature was originally created by Darth and Repooc of S&L.
 -- Credits: Darth Predator and Repooc.
 -- ElvUI Shadow & Light : https://www.tukui.org/addons.php?id=38
 -- Later modified by me for this addon
@@ -342,7 +342,7 @@ function PT:SetProgressionInfo(guid, tt)
 	end
 end
 
-function PT:AchieveReady(event, GUID)
+local function AchieveReady(event, GUID)
 	if (TT.compareGUID ~= GUID) then return end
 	local unit = "mouseover"
 	if UnitExists(unit) then
@@ -353,11 +353,10 @@ function PT:AchieveReady(event, GUID)
 	TT:UnregisterEvent("INSPECT_ACHIEVEMENT_READY")
 end
 
-function PT:AddInspectInfo(tt, unit, numTries, r, g, b)
+local function OnInspectInfo(self, tt, unit, numTries, r, g, b)
 	if InCombatLockdown() then return end
 	if not E.db.eel.progression.enable then return end
 	if not (unit and CanInspect(unit)) then return end
-
 	local level = UnitLevel(unit)
 	if not level or level < GetMaxLevelForLatestExpansion() then return end
 
@@ -376,7 +375,7 @@ function PT:AddInspectInfo(tt, unit, numTries, r, g, b)
 
 			self.compareGUID = guid
 			if SetAchievementComparisonUnit(unit) then
-				self:RegisterEvent("INSPECT_ACHIEVEMENT_READY", PT:AchieveReady())
+				self:RegisterEvent("INSPECT_ACHIEVEMENT_READY", AchieveReady)
 			end
 			return
 		end
@@ -387,7 +386,7 @@ end
 
 function PT:Initialize()
 	PT.Initialized = true
-	hooksecurefunc(TT, 'AddInspectInfo', PT.AddInspectInfo)
+	hooksecurefunc(TT, 'AddInspectInfo', OnInspectInfo)
 end
 
 E:RegisterModule(PT:GetName())
