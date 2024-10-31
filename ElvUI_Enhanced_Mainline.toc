@@ -1,7 +1,7 @@
 ## Title: |cff1784d1ElvUI|r Enhanced Again
 ## Notes: Plugin-Enhancements for |cff1784d1ElvUI|r.
 ## Author: Tevvoll, Illuminé
-## Version: 5.1.3
+## Version: 5.2.0
 ## RequiredDeps: ElvUI
 ## Interface: 110005
 ## X-Interface: 110005
@@ -9,7 +9,6 @@
 ## IconTexture: Interface\AddOns\ElvUI\Core\Media\Textures\LogoAddon
 ## X-ElvVersion: 13.76
 
-libs\load_libs.xml
 locales\load_locales.xml
 ElvUI_Enhanced.lua
 config\load_config.xml
