@@ -76,7 +76,7 @@ local function ConfigTable()
                         disabled = function() return not E.db.eel.progression.enable end,
                         args = {
                             nerubarpalace = { order = -34, type = "toggle", name = "Nerub'ar Palace" },
-                        } 
+                        }
                     },
                     dfl = {
                         order = 7,

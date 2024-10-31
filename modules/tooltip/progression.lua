@@ -6,12 +6,12 @@
 ------------------------------------------------------------------
 
 local E, L, V, P, G = unpack(ElvUI); --Import: Engine, Locales, PrivateDB, ProfileDB, GlobalDB, Localize Underscore
-local PT = E:NewModule("ProgressTooltip", "AceHook-3.0", "AceEvent-3.0")
 local TT = E:GetModule('Tooltip')
+local PT = E:NewModule('ProgressTooltip', 'AceHook-3.0', 'AceEvent-3.0')
 
-PT.levels = { 
-	"Mythic", 
-	"Heroic", 
+PT.levels = {
+	"Mythic",
+	"Heroic",
 	"Normal",
 	"LFR",
 }
@@ -254,17 +254,17 @@ PT.bosses = {
 		["option"] = "nerubarpalace",
 		["statIDs"] = {
 			{ -- Mythic
-				40236, 40237, 40238, 40239, 40240, 40241, 40242, 40243
+				40270, 40274, 40278, 40282, 40286, 40290, 40294, 40298
 			},
-			-- { -- Heroic
-			-- 	19369, 19370, 19371, 19372, 19373, 19374, 19375, 19376, 1937
-			-- },
-			-- { -- Normal
-			-- 	19360, 19361, 19362, 19363, 19364, 19365, 19366, 19367, 19368
-			-- },
-			-- { -- LFR
-			-- 	19348, 19352, 19353, 19354, 19355, 19356, 19357, 19358, 19359
-			-- },
+			{ -- Heroic
+				40269, 40273, 40277, 40281, 40285, 40289, 40293, 40297
+			},
+			{ -- Normal
+				40268, 40272, 40276, 40280, 40284, 40288, 40292, 40296
+			},
+			{ -- LFR
+				40267, 40271, 40275, 40279, 40283, 40287, 40291, 40295
+			},
 		},
 	},
 }
@@ -275,7 +275,7 @@ PT.highest = 0
 
 function PT:GetProgression(guid)
 	local kills, complete, pos = 0, false, 0
-	local statFunc = guid == playerGUID and GetStatistic or GetComparisonStatistic
+	local statFunc = guid == PT.playerGUID and GetStatistic or GetComparisonStatistic
 
 	for tier = 1, #PT.tiers["LONG"] do
 		local option = PT.bosses[tier].option
@@ -286,7 +286,7 @@ function PT:GetProgression(guid)
 			PT.highest = 0
 			for statInfo = 1, #statTable[level] do
 				kills = tonumber((statFunc(statTable[level][statInfo])))
-				if kills and kills > 0 then						
+				if kills and kills > 0 then
 					PT.highest = PT.highest + 1
 				end
 			end
@@ -299,7 +299,7 @@ function PT:GetProgression(guid)
 				end
 			end
 		end
-	end		
+	end
 end
 
 function PT:UpdateProgression(guid)
@@ -342,7 +342,7 @@ function PT:SetProgressionInfo(guid, tt)
 	end
 end
 
-local function AchieveReady(event, GUID)
+function PT:AchieveReady(event, GUID)
 	if (TT.compareGUID ~= GUID) then return end
 	local unit = "mouseover"
 	if UnitExists(unit) then
@@ -353,20 +353,21 @@ local function AchieveReady(event, GUID)
 	TT:UnregisterEvent("INSPECT_ACHIEVEMENT_READY")
 end
 
-local function OnInspectInfo(self, tt, unit, numTries, r, g, b)
+function PT:AddInspectInfo(tt, unit, numTries, r, g, b)
 	if InCombatLockdown() then return end
 	if not E.db.eel.progression.enable then return end
 	if not (unit and CanInspect(unit)) then return end
+
 	local level = UnitLevel(unit)
 	if not level or level < GetMaxLevelForLatestExpansion() then return end
-	
+
 	local guid = UnitGUID(unit)
 	if not PT.progressCache[guid] or (GetTime() - PT.progressCache[guid].timer) > 600 then
 		if guid == PT.playerGUID then
 			PT:UpdateProgression(guid)
 		else
 			ClearAchievementComparisonUnit()
-			if not self.loadedComparison and select(2, IsAddOnLoaded("Blizzard_AchievementUI")) then
+			if not self.loadedComparison and select(2, C_AddOns.IsAddOnLoaded("Blizzard_AchievementUI")) then
 				AchievementFrame_DisplayComparison(unit)
 				HideUIPanel(_G["AchievementFrame"])
 				ClearAchievementComparisonUnit()
@@ -375,7 +376,7 @@ local function OnInspectInfo(self, tt, unit, numTries, r, g, b)
 
 			self.compareGUID = guid
 			if SetAchievementComparisonUnit(unit) then
-				self:RegisterEvent("INSPECT_ACHIEVEMENT_READY", AchieveReady)
+				self:RegisterEvent("INSPECT_ACHIEVEMENT_READY", PT:AchieveReady())
 			end
 			return
 		end
@@ -385,7 +386,8 @@ local function OnInspectInfo(self, tt, unit, numTries, r, g, b)
 end
 
 function PT:Initialize()
-	hooksecurefunc(TT, 'AddInspectInfo', OnInspectInfo)
+	PT.Initialized = true
+	hooksecurefunc(TT, 'AddInspectInfo', PT.AddInspectInfo)
 end
 
 E:RegisterModule(PT:GetName())
